@@ -9,10 +9,10 @@ namespace AZWebAppDB.Services
 {
     public class CourseService
     {
-        private static string db_source = "tks007dbserver.database.windows.net";
-        private static string db_user = "tks007";
-        private static string db_password = "Tksantra007))&";
-        private static string db_database = "tks007DB";
+        //private static string db_source = "tks007dbserver.database.windows.net";
+        //private static string db_user = "tks007";
+        //private static string db_password = "Tksantra007))&";
+        //private static string db_database = "tks007DB";
 
 
         private SqlConnection GetConnection(string _connection_string)
