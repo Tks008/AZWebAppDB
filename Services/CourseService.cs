@@ -15,21 +15,22 @@ namespace AZWebAppDB.Services
         private static string db_database = "tks007DB";
 
 
-        private SqlConnection GetConnection()
+        private SqlConnection GetConnection(string _connection_string)
         {
             // Here we are creating the SQL connection
-            var _builder = new SqlConnectionStringBuilder();
-            _builder.DataSource = db_source;
-            _builder.UserID = db_user;
-            _builder.Password = db_password;
-            _builder.InitialCatalog = db_database;
-            return new SqlConnection(_builder.ConnectionString);
+            //var _builder = new SqlConnectionStringBuilder();
+            //_builder.DataSource = db_source;
+            //_builder.UserID = db_user;
+            //_builder.Password = db_password;
+            //_builder.InitialCatalog = db_database;
+            //return new SqlConnection(_builder.ConnectionString);
+            return new SqlConnection(_connection_string);
         }
-        public IEnumerable<Course> GetCourses()
+        public IEnumerable<Course> GetCourses(string _connection_string)
         {
             List<Course> _lst = new List<Course>();
             string _statement = "SELECT courseid,coursename,rating from Course";
-            SqlConnection _connection = GetConnection();
+            SqlConnection _connection = GetConnection(_connection_string);
             // Let's open the connection
             _connection.Open();
             // We then construct the statement of getting the data from the Course table
